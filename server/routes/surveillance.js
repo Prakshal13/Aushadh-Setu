@@ -8,13 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const dataFilePath = path.join(__dirname, '../data/district_data.json');
 
-function getDb() {
-  return JSON.parse(fs.readFileSync(dataFilePath, 'utf8'));
-}
-
-function saveDb(data) {
-  fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2), 'utf8');
-}
+import { getDb, saveDb } from '../db.js';
 
 // 1. Get Weekly IDSP Surveillance Records
 router.get('/weekly', (req, res) => {

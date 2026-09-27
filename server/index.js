@@ -19,10 +19,14 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// Ensure uploads directory exists
-const uploadsDir = path.join(__dirname, '../uploads');
-if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true });
+// Ensure uploads directory exists (local only)
+if (!process.env.VERCEL) {
+  try {
+    const uploadsDir = path.join(__dirname, '../uploads');
+    if (!fs.existsSync(uploadsDir)) {
+      fs.mkdirSync(uploadsDir, { recursive: true });
+    }
+  } catch (e) {}
 }
 
 // Middleware

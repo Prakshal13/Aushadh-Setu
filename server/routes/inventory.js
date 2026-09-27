@@ -8,15 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const dataFilePath = path.join(__dirname, '../data/district_data.json');
 
-// Helper to read and write database
-function getDb() {
-  const data = fs.readFileSync(dataFilePath, 'utf8');
-  return JSON.parse(data);
-}
-
-function saveDb(data) {
-  fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2), 'utf8');
-}
+import { getDb, saveDb } from '../db.js';
 
 // 0. Get All States
 router.get('/states', (req, res) => {

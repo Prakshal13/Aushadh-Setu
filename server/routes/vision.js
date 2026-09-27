@@ -4,7 +4,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs';
 
 const router = express.Router();
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ storage: multer.memoryStorage() });
 
 router.post('/scan-carton', upload.single('image'), async (req, res) => {
   try {
@@ -16,7 +16,11 @@ router.post('/scan-carton', upload.single('image'), async (req, res) => {
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-      const fileBuffer = fs.readFileSync(file.path);
+      const fileBuffer = file.buffer || (file.path ? fs.readFileSync(file.path) : null);
+      if (!fileBuffer) {
+        return res.status(400).json({ error: 'No image buffer available' });
+      }
+
       const imagePart = {
         inlineData: {
           data: fileBuffer.toString('base64'),
@@ -48,8 +52,9 @@ router.post('/scan-carton', upload.single('image'), async (req, res) => {
       const cleanJson = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
       const extractedData = JSON.parse(cleanJson);
 
-      // Clean up uploaded file
-      fs.unlinkSync(file.path);
+      if (file.path) {
+        try { fs.unlinkSync(file.path); } catch (e) {}
+      }
 
       return res.json({
         success: true,
@@ -60,8 +65,8 @@ router.post('/scan-carton', upload.single('image'), async (req, res) => {
 
     // High-Fidelity Fallback Simulator when no API Key is provided
     // This guarantees the frontend works seamlessly out-of-the-box
-    if (file) {
-      fs.unlinkSync(file.path);
+    if (file && file.path) {
+      try { fs.unlinkSync(file.path); } catch (e) {}
     }
 
     // Default realistic sample based on common public health blister pack
