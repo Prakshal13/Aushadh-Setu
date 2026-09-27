@@ -1,0 +1,695 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>Aushadh Setu (औषध सेतु) — Sovereign Outbreak-Aware Medicine Grid</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #FAF8F5;
+        color: #1A1614;
+      }
+    }
+
+    /* Subtle Architectural Grid Texture */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(133, 116, 99, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(133, 116, 99, 0.05) 1px, transparent 1px);
+    }
+
+    /* Radiant Warm Apricot/Sunset Ambient Glow */
+    .hero-warm-glow {
+      background: radial-gradient(circle at 50% 65%, rgba(251, 213, 165, 0.55) 0%, rgba(254, 236, 210, 0.35) 35%, rgba(250, 248, 245, 0) 70%);
+    }
+
+    .card-floor-glow {
+      background: radial-gradient(ellipse at 50% 100%, rgba(251, 213, 165, 0.6) 0%, rgba(254, 236, 210, 0.25) 50%, rgba(255, 255, 255, 0) 80%);
+    }
+
+    /* Serif Italics styling */
+    .editorial-serif {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+    }
+
+    .font-handwriting {
+      font-family: 'Caveat', cursive;
+    }
+
+    /* Infinite Pill Marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 34s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-mask {
+      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-warm": "#FAF8F5",
+            "surface-cream": "#F6F1E8",
+            "surface-pure": "#FFFFFF",
+            "primary": "#865300",
+            "primary-rich": "#9C5400",
+            "amber-brand": "#D97706",
+            "amber-accent": "#F59E0B",
+            "amber-soft": "#FDF2E2",
+            "peach-glow": "#FBD5A5",
+            "text-obsidian": "#1C1917",
+            "text-umber": "#292524",
+            "text-muted": "#6E655C",
+            "text-subtle": "#857463",
+            "border-soft": "#EBE4D8",
+            "border-subtle": "rgba(220, 200, 175, 0.45)"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"],
+            "serif-italic": ["Instrument Serif", "Georgia", "serif"],
+            "body": ["Inter", "sans-serif"],
+            "handwriting": ["Caveat", "cursive"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface-warm font-body text-text-obsidian antialiased selection:bg-amber-soft selection:text-primary min-h-screen flex flex-col justify-between overflow-x-hidden relative">
+<!-- TOP BACKGROUND SUBTLE GRID & LUXURY AMBIENT GLOW -->
+<div class="absolute inset-0 bg-grid-pattern pointer-events-none opacity-80 h-[1050px]"></div>
+<div class="absolute top-28 left-1/2 -translate-x-1/2 w-[1100px] h-[640px] pointer-events-none z-0 hero-warm-glow blur-2xl"></div>
+<!-- NAVIGATION CHROME -->
+<header class="fixed top-4 left-0 right-0 z-50 px-4 md:px-8">
+<div class="max-w-6xl mx-auto h-16 px-5 sm:px-7 rounded-full bg-white/80 backdrop-blur-xl border border-white/90 shadow-[0_4px_24px_rgba(26,22,20,0.03)] flex items-center justify-between transition-all duration-300">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group focus:outline-none" href="#">
+<div class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-soft to-[#F7DFC5] flex items-center justify-center text-primary-rich border border-amber-brand/20 group-hover:scale-105 transition-transform duration-200">
+<span class="material-symbols-outlined text-[19px]">emergency</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-display font-bold text-[16px] tracking-tight text-text-obsidian">Aushadh Setu</span>
+<span class="text-[11px] font-medium tracking-tight text-amber-brand/90 opacity-90 hidden sm:inline">(औषध सेतु)</span>
+</div>
+<span class="text-[10px] tracking-widest uppercase font-medium text-text-subtle">Supply Grid</span>
+</div>
+<span class="hidden lg:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-soft/80 text-[11px] font-medium text-primary-rich border border-amber-brand/15 ml-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+          National Network
+        </span>
+</a>
+<!-- Primary Links -->
+<nav class="hidden md:flex items-center gap-7 text-[13px] font-medium text-text-muted">
+<a class="hover:text-text-obsidian transition-colors" href="#start-where-you-are">Stakeholders</a>
+<a class="hover:text-text-obsidian transition-colors" href="#how-it-works">Methodology</a>
+<a class="hover:text-text-obsidian transition-colors" href="#pilots">Pilots</a>
+<a class="hover:text-text-obsidian transition-colors" href="#impact">Impact Benchmark</a>
+</nav>
+<!-- Header CTAs -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex text-[13px] font-medium text-text-muted hover:text-text-obsidian px-3 py-1.5 transition-colors" href="#">
+          Sign In
+        </a>
+<a class="inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full bg-text-obsidian text-white text-[13px] font-medium hover:bg-neutral-800 transition-all duration-200 shadow-sm" href="#request-access">
+<span>Request Pilot</span>
+<span class="w-6 h-6 rounded-full bg-gradient-to-tr from-[#A66E2E] to-[#F1B96B] flex items-center justify-center text-text-obsidian text-[11px] font-bold">
+            &gt;
+          </span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT CONTAINER -->
+<main class="w-full pt-28 md:pt-36 flex-1 flex flex-col relative z-10">
+<!-- HERO SECTION -->
+<section class="w-full px-5 md:px-8 max-w-5xl mx-auto flex flex-col items-center text-center pt-6 pb-14 md:pb-20 relative">
+<!-- Top Mini Badge / Pill with Avatar Icon -->
+<div class="inline-flex items-center gap-2.5 pl-1.5 pr-4 py-1.5 rounded-full bg-white/90 border border-amber-brand/20 shadow-[0_2px_14px_rgba(217,119,6,0.07)] backdrop-blur-md mb-8">
+<div class="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-400 to-amber-100 flex items-center justify-center text-amber-900 text-[11px] font-bold shadow-xs">
+<span class="material-symbols-outlined text-[14px]">local_hospital</span>
+</div>
+<span class="text-[12px] font-medium text-text-umber tracking-tight">District health operational across 5 sovereign states</span>
+</div>
+<!-- Main Editorial Headline with Serif Golden Italic Accent -->
+<h1 class="font-display font-bold text-4xl sm:text-6xl md:text-[66px] leading-[1.09] tracking-[-0.03em] text-text-obsidian max-w-4xl mb-6">
+        What if epidemic medicine arrived <span class="editorial-serif font-normal text-amber-brand text-[1.14em] tracking-normal">before</span> the outbreak peaked?
+      </h1>
+<!-- Refined Subtitle -->
+<p class="font-body text-base sm:text-lg md:text-[18px] text-text-muted max-w-2xl leading-relaxed mb-10 font-normal">
+        Scale your frontline clinic resilience without the drug expiry overhead — an outbreak-aware medicine grid that synchronizes IDSP surveillance with district health supply.
+      </p>
+<!-- HUMONTO REPLICA HERO CTA + "Its free!" HANDWRITTEN ANNOTATION -->
+<div class="relative flex items-center justify-center mb-10">
+<!-- Main Dark Pill Button with Metallic Circle Chevron -->
+<a class="group inline-flex items-center pl-7 pr-2.5 py-2.5 rounded-full bg-[#181513] text-white hover:bg-neutral-800 transition-all duration-200 shadow-[0_8px_30px_rgba(24,21,19,0.18)] hover:shadow-xl" href="#request-access">
+<span class="font-medium text-[15px] tracking-tight mr-4">Book Pilot Walkthrough</span>
+<span class="w-9 h-9 rounded-full bg-gradient-to-tr from-[#B2762A] via-[#E8B264] to-[#FDE7B8] flex items-center justify-center text-neutral-900 font-bold text-sm shadow-inner group-hover:scale-105 transition-transform duration-200">
+            &gt;
+          </span>
+</a>
+<!-- Hand-drawn curved arrow & "Its free!" casual note -->
+<div class="hidden sm:flex absolute left-full ml-5 -top-2 flex-col items-start select-none pointer-events-none">
+<span class="font-handwriting text-[23px] text-text-obsidian font-bold rotate-[-6deg] leading-none mb-0.5">
+            Its free!
+          </span>
+<svg class="w-12 h-9 text-text-obsidian/75 -rotate-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 54 36">
+<path d="M 46 4 C 34 8, 16 12, 10 26 M 10 26 L 18 27 M 10 26 L 8 18"></path>
+</svg>
+</div>
+</div>
+<!-- Social Proof / Trust below button -->
+<div class="flex flex-col sm:flex-row items-center gap-3 text-xs text-text-subtle font-medium mb-12">
+<!-- Overlapping Rounded Avatars -->
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full bg-[#E6D4BD] border-2 border-surface-warm flex items-center justify-center text-[10px] font-bold text-amber-950">MH</div>
+<div class="w-7 h-7 rounded-full bg-[#D1E0D7] border-2 border-surface-warm flex items-center justify-center text-[10px] font-bold text-[#143E26]">RJ</div>
+<div class="w-7 h-7 rounded-full bg-[#D0DDF0] border-2 border-surface-warm flex items-center justify-center text-[10px] font-bold text-[#1E3A5F]">TN</div>
+<div class="w-7 h-7 rounded-full bg-[#EBDAD2] border-2 border-surface-warm flex items-center justify-center text-[10px] font-bold text-[#572B17]">DL</div>
+</div>
+<!-- 5 Golden Stars -->
+<div class="flex items-center text-amber-500 gap-0.5">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+</div>
+<span class="text-text-muted font-medium">Loved by health officers &amp; state missions globally ❤</span>
+</div>
+<!-- 3 Feature Bullets with Black Round Checkmarks -->
+<div class="flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-xs sm:text-[13px] text-text-umber font-medium max-w-3xl mb-12">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-text-obsidian text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+<span>Frontline clinical leadership (not static PDF spreadsheets)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-text-obsidian text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+<span>14-day early warning: clarity + quick rebalance before hospital surge</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-text-obsidian text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+<span>Human-first, audit-compliant (systems district officers actually use)</span>
+</div>
+</div>
+</section>
+<!-- FLOATING PILL MARQUEE BADGES (Warm apricot checkmarks) -->
+<section class="w-full py-3 mb-10 overflow-hidden">
+<div class="marquee-mask w-full overflow-hidden">
+<div class="marquee-track flex items-center gap-4 text-xs font-medium text-text-umber">
+<div class="flex items-center gap-4 shrink-0">
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-border-soft shadow-xs backdrop-blur-sm">
+<span class="text-amber-brand font-bold text-sm">✓</span> District inventory that prevents stock-outs (not chaos)
+            </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-border-soft shadow-xs backdrop-blur-sm">
+<span class="text-amber-brand font-bold text-sm">✓</span> Redistribute faster with automated FEFO matching
+            </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-border-soft shadow-xs backdrop-blur-sm">
+<span class="text-amber-brand font-bold text-sm">✓</span> Keep vital medicines clear, auditable, and cold-chain verified
+            </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-border-soft shadow-xs backdrop-blur-sm">
+<span class="text-amber-brand font-bold text-sm">✓</span> Stay ahead of monsoon &amp; vector surges
+            </span>
+</div>
+<!-- Marquee clone -->
+<div aria-hidden="true" class="flex items-center gap-4 shrink-0">
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-border-soft shadow-xs backdrop-blur-sm">
+<span class="text-amber-brand font-bold text-sm">✓</span> District inventory that prevents stock-outs (not chaos)
+            </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-border-soft shadow-xs backdrop-blur-sm">
+<span class="text-amber-brand font-bold text-sm">✓</span> Redistribute faster with automated FEFO matching
+            </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-border-soft shadow-xs backdrop-blur-sm">
+<span class="text-amber-brand font-bold text-sm">✓</span> Keep vital medicines clear, auditable, and cold-chain verified
+            </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-border-soft shadow-xs backdrop-blur-sm">
+<span class="text-amber-brand font-bold text-sm">✓</span> Stay ahead of monsoon &amp; vector surges
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: 3-CARD "START WHERE YOU ARE" TRIAGE (EXACT REPLICA OF IMAGE_5) -->
+<section class="w-full px-5 md:px-8 py-20 md:py-28 bg-[#F6F1E8]/75 relative border-y border-border-soft/60" id="start-where-you-are">
+<div class="max-w-6xl mx-auto flex flex-col items-center">
+<!-- Section Header -->
+<div class="text-center mb-16 max-w-3xl mx-auto">
+<h2 class="font-display font-bold text-3xl sm:text-4xl text-text-obsidian tracking-tight mb-4">
+            Start where you are—then we'll guide you to the right next step
+          </h2>
+<p class="text-text-muted text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+            Whether you are confronting chaotic monsoon stock-outs, auditing systemic state-wide drug expiry, or seeking a 1-on-1 institutional briefing.
+          </p>
+</div>
+<!-- 3 Distinct Vertical Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-7 w-full items-stretch">
+<!-- CARD 1: FRONTLINE CHAOS (Tilted X Pills) -->
+<div class="bg-white rounded-[2rem] p-7 sm:p-8 border border-border-soft shadow-[0_4px_24px_rgba(26,22,20,0.03)] flex flex-col justify-between hover:shadow-[0_12px_36px_rgba(217,119,6,0.08)] hover:border-amber-brand/35 transition-all duration-300">
+<div>
+<h3 class="font-display font-bold text-xl sm:text-[22px] text-text-obsidian mb-3 leading-snug">
+                I'm feeling frontline medicine chaos
+              </h3>
+<p class="font-body text-sm text-text-muted leading-relaxed mb-6 font-normal">
+                Clinics run dry during surges, delivery expectations are fuzzy, and drug write-offs are ad hoc.
+              </p>
+<!-- Rounded Pill Outline Button -->
+<a class="inline-flex items-center justify-center w-full px-4 py-2.5 rounded-full border border-neutral-300 text-xs font-semibold text-text-obsidian hover:bg-neutral-50 transition-colors mb-8" href="#how-it-works">
+                Read: What is Autonomous Redistribution?
+              </a>
+</div>
+<!-- Bottom Visual Container with Warm Peach Floor Glow & Tilted Pills with red 'x' -->
+<div class="w-full h-56 rounded-2xl bg-[#FCFAF7] border border-border-soft/70 relative overflow-hidden card-floor-glow p-4 flex flex-col items-center justify-center gap-2.5">
+<!-- Pill 1 -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white shadow-xs border border-border-soft text-xs font-medium text-text-umber -rotate-3 hover:rotate-0 transition-transform">
+<span>Stock-out risk</span>
+<span class="w-4 h-4 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-[10px] font-bold">✕</span>
+</div>
+<!-- Pill 2 -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white shadow-xs border border-border-soft text-xs font-medium text-text-umber rotate-2 hover:rotate-0 transition-transform">
+<span>Messy procurement</span>
+<span class="w-4 h-4 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-[10px] font-bold">✕</span>
+</div>
+<!-- Pill 3 -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white shadow-xs border border-border-soft text-xs font-medium text-text-umber -rotate-2 hover:rotate-0 transition-transform">
+<span>Pharmacist overload</span>
+<span class="w-4 h-4 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-[10px] font-bold">✕</span>
+</div>
+<!-- Pill 4 -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white shadow-xs border border-border-soft text-xs font-medium text-text-umber rotate-3 hover:rotate-0 transition-transform">
+<span>Slow emergency transfer</span>
+<span class="w-4 h-4 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-[10px] font-bold">✕</span>
+</div>
+</div>
+</div>
+<!-- CARD 2: ROADMAP CAPABILITIES -->
+<div class="bg-white rounded-[2rem] p-7 sm:p-8 border border-border-soft shadow-[0_4px_24px_rgba(26,22,20,0.03)] flex flex-col justify-between hover:shadow-[0_12px_36px_rgba(217,119,6,0.08)] hover:border-amber-brand/35 transition-all duration-300">
+<div>
+<h3 class="font-display font-bold text-xl sm:text-[22px] text-text-obsidian mb-3 leading-snug">
+                I want to see what you actually do
+              </h3>
+<p class="font-body text-sm text-text-muted leading-relaxed mb-6 font-normal">
+                Explore how Aushadh Setu supports disease surveillance, 14-day burn rates, cold chain, and FEFO matching.
+              </p>
+<!-- Rounded Pill Outline Button -->
+<a class="inline-flex items-center justify-center w-full px-4 py-2.5 rounded-full border border-neutral-300 text-xs font-semibold text-text-obsidian hover:bg-neutral-50 transition-colors mb-8" href="#how-it-works">
+                Explore system capabilities →
+              </a>
+</div>
+<!-- Bottom Visual Container with 3-Step Clean Vertical Roadmap -->
+<div class="w-full h-56 rounded-2xl bg-[#FCFAF7] border border-border-soft/70 relative overflow-hidden card-floor-glow p-4 flex flex-col justify-center">
+<div class="flex flex-col gap-3 relative">
+<!-- Vertical connecting dashed line -->
+<div class="absolute left-3.5 top-3 bottom-3 w-0.5 border-l-2 border-dashed border-amber-300 pointer-events-none"></div>
+<!-- Step 1 -->
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-7 h-7 rounded-full bg-[#E08316] text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-xs">
+                    1
+                  </div>
+<div>
+<div class="text-[12px] font-bold text-text-obsidian">Discovery &amp; Baseline Audit</div>
+<div class="text-[10.5px] text-text-muted leading-tight">Geographic mapping &amp; seasonal disease vectors</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-7 h-7 rounded-full bg-[#E08316] text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-xs">
+                    2
+                  </div>
+<div>
+<div class="text-[12px] font-bold text-text-obsidian">14-Day Outbreak Model</div>
+<div class="text-[10.5px] text-text-muted leading-tight">Burn velocity &amp; FEFO surplus thresholds</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-7 h-7 rounded-full bg-[#E08316] text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-xs">
+                    3
+                  </div>
+<div>
+<div class="text-[12px] font-bold text-text-obsidian">1-Click Peer-to-Peer Dispatch</div>
+<div class="text-[10.5px] text-text-muted leading-tight">Digital vouchers &amp; cold-chain telemetry</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 3: FIX THIS NOW (Video Consultation UI) -->
+<div class="bg-white rounded-[2rem] p-7 sm:p-8 border border-border-soft shadow-[0_4px_24px_rgba(26,22,20,0.03)] flex flex-col justify-between hover:shadow-[0_12px_36px_rgba(217,119,6,0.08)] hover:border-amber-brand/35 transition-all duration-300">
+<div>
+<h3 class="font-display font-bold text-xl sm:text-[22px] text-text-obsidian mb-3 leading-snug">
+                I'm ready to fix this now
+              </h3>
+<p class="font-body text-sm text-text-muted leading-relaxed mb-6 font-normal">
+                Get a clear deployment plan and district feasibility report in a free 30-min pilot consultation.
+              </p>
+<!-- Dark Pill with Metallic Circular Action Button Inside -->
+<a class="group inline-flex items-center justify-between w-full pl-5 pr-2 py-2 rounded-full bg-[#181513] text-white hover:bg-neutral-800 transition-all mb-8 shadow-sm" href="#request-access">
+<span class="text-xs font-semibold">Book Free Grid Audit</span>
+<span class="w-7 h-7 rounded-full bg-gradient-to-tr from-[#B2762A] to-[#F1B96B] flex items-center justify-center text-neutral-900 font-bold text-xs shadow-inner group-hover:scale-105 transition-transform">
+                  &gt;
+                </span>
+</a>
+</div>
+<!-- Bottom Visual Container: Video Call Consultation Mockup -->
+<div class="w-full h-56 rounded-2xl bg-[#FCFAF7] border border-border-soft/70 relative overflow-hidden card-floor-glow p-3.5 flex flex-col justify-between">
+<!-- Live Video Tiles Grid -->
+<div class="grid grid-cols-2 gap-2 flex-1">
+<!-- Tile 1: Health Director -->
+<div class="rounded-xl bg-stone-800 p-2.5 flex flex-col justify-between text-white relative overflow-hidden shadow-inner">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="material-symbols-outlined text-[13px] text-neutral-300">mic</span>
+</div>
+<div class="relative z-10 text-[10px] font-medium tracking-tight">
+                    Dr. Verma (DHO)
+                  </div>
+</div>
+<!-- Tile 2: Grid Specialist -->
+<div class="rounded-xl bg-stone-700 p-2.5 flex flex-col justify-between text-white relative overflow-hidden shadow-inner">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="material-symbols-outlined text-[13px] text-neutral-300">mic</span>
+</div>
+<div class="relative z-10 text-[10px] font-medium tracking-tight">
+                    Setu Lead Analyst
+                  </div>
+</div>
+</div>
+<!-- Video Call Bottom Control Bar -->
+<div class="pt-2 flex items-center justify-between px-1">
+<!-- Mini Attendee Avatars -->
+<div class="flex -space-x-1.5">
+<div class="w-5 h-5 rounded-full bg-amber-200 border border-white text-[9px] font-bold text-amber-900 flex items-center justify-center">AS</div>
+<div class="w-5 h-5 rounded-full bg-stone-300 border border-white text-[9px] font-bold text-stone-800 flex items-center justify-center">NH</div>
+</div>
+<!-- Action Controls (Mute, Video, Red Hangup) -->
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-stone-200 flex items-center justify-center text-stone-700">
+<span class="material-symbols-outlined text-[12px]">mic</span>
+</span>
+<span class="w-6 h-6 rounded-full bg-stone-200 flex items-center justify-center text-stone-700">
+<span class="material-symbols-outlined text-[12px]">videocam</span>
+</span>
+<span class="w-6 h-6 rounded-full bg-rose-600 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[12px]">call_end</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: FOUR-STEP AUTONOMOUS REPLENISHMENT LOOP -->
+<section class="w-full px-5 md:px-8 py-20 md:py-28" id="how-it-works">
+<div class="max-w-4xl mx-auto flex flex-col items-center">
+<div class="text-center mb-16">
+<span class="text-[11px] font-bold tracking-[0.2em] text-primary-rich uppercase mb-3 block">Autonomous Orchestration</span>
+<h2 class="font-display font-bold text-3xl sm:text-4xl text-text-obsidian tracking-tight">
+            A four-step loop from syndromic signal to replenished clinic
+          </h2>
+<p class="text-text-muted text-sm sm:text-base max-w-xl mx-auto mt-3">
+            How Aushadh Setu closes the operational gap within hours rather than waiting for bureaucratic re-ordering cycles.
+          </p>
+</div>
+<div class="flex flex-col gap-4 w-full">
+<!-- Step 1 -->
+<div class="bg-white rounded-2xl p-6 md:p-7 flex items-start gap-5 border border-border-soft/80 shadow-[0_2px_12px_rgba(26,22,20,0.02)] transition-transform duration-200 hover:-translate-y-0.5">
+<div class="w-9 h-9 rounded-full bg-text-obsidian text-white flex items-center justify-center shrink-0 font-display font-bold text-sm shadow-sm">
+              1
+            </div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<h4 class="font-display font-bold text-base md:text-lg text-text-obsidian">Surveillance Signal Ingestion</h4>
+<span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">10-14 Day Lead Time</span>
+</div>
+<p class="font-body text-sm text-text-muted leading-relaxed">
+                Connects directly to the Integrated Disease Surveillance Programme (IDSP) and IMD weather telemetry, detecting rainfall anomalies and syndromic clusters 10–14 days before peak patient presentation.
+              </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-white rounded-2xl p-6 md:p-7 flex items-start gap-5 border border-border-soft/80 shadow-[0_2px_12px_rgba(26,22,20,0.02)] transition-transform duration-200 hover:-translate-y-0.5">
+<div class="w-9 h-9 rounded-full bg-[#EAE2D5] text-text-obsidian flex items-center justify-center shrink-0 font-display font-bold text-sm border border-border-soft">
+              2
+            </div>
+<div class="flex-1">
+<h4 class="font-display font-bold text-base md:text-lg text-text-obsidian mb-1">Predictive Frontline Burn-Rate Modeling</h4>
+<p class="font-body text-sm text-text-muted leading-relaxed">
+                Calculates daily stock depletion velocities across every PHC, SC, and CHC in the block, instantly flagging clinics expected to breach safety thresholds within two weeks.
+              </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-white rounded-2xl p-6 md:p-7 flex items-start gap-5 border border-border-soft/80 shadow-[0_2px_12px_rgba(26,22,20,0.02)] transition-transform duration-200 hover:-translate-y-0.5">
+<div class="w-9 h-9 rounded-full bg-[#EAE2D5] text-text-obsidian flex items-center justify-center shrink-0 font-display font-bold text-sm border border-border-soft">
+              3
+            </div>
+<div class="flex-1">
+<h4 class="font-display font-bold text-base md:text-lg text-text-obsidian mb-1">Automated FEFO Surplus Matching</h4>
+<p class="font-body text-sm text-text-muted leading-relaxed">
+                Identifies nearby facilities holding surplus medicines nearing expiry (&lt;60 days) and creates zero-waste transfer routes directly to deficit hotspots, preserving state drug capital.
+              </p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-white rounded-2xl p-6 md:p-7 flex items-start gap-5 border border-border-soft/80 shadow-[0_2px_12px_rgba(26,22,20,0.02)] transition-transform duration-200 hover:-translate-y-0.5">
+<div class="w-9 h-9 rounded-full bg-[#EAE2D5] text-text-obsidian flex items-center justify-center shrink-0 font-display font-bold text-sm border border-border-soft">
+              4
+            </div>
+<div class="flex-1">
+<h4 class="font-display font-bold text-base md:text-lg text-text-obsidian mb-1">1-Click Dispatch &amp; Cold-Chain Telemetry</h4>
+<p class="font-body text-sm text-text-muted leading-relaxed">
+                The Chief Medical Officer approves digital gate-passes in one click. Dispatched parcels are logged via ABDM-compliant custody tracking with thermal IoT verification.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: SIGNATURE HIGH-CONTRAST BENCHMARK BLOCK (THE TRIPLE ZERO BENCHMARK) -->
+<section class="w-full px-5 md:px-8 py-20 md:py-28" id="impact">
+<div class="max-w-5xl mx-auto rounded-[2.5rem] bg-[#161311] text-white p-9 sm:p-14 md:p-18 relative overflow-hidden shadow-2xl border border-white/10">
+<div class="absolute top-0 right-1/4 w-[500px] h-[350px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-10 w-[300px] h-[250px] bg-[#C27814]/10 rounded-full blur-[90px] pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<span class="text-[11px] font-bold tracking-[0.22em] text-amber-accent uppercase mb-3 block">
+            The Triple Zero Public Health Benchmark
+          </span>
+<h3 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white max-w-2xl tracking-tight mb-12">
+            Engineered for audited resilience across district healthcare boundaries.
+          </h3>
+<!-- 3 Luxury Metrics Highlighted -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-12 py-10 px-6 bg-white/[0.04] rounded-3xl border border-white/10 backdrop-blur-md">
+<div class="flex flex-col items-center">
+<span class="font-display font-bold text-5xl md:text-6xl text-[#FED7AA] mb-2 tracking-tight">0</span>
+<span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-1">Zero Tolerance</span>
+<span class="text-sm text-neutral-300 font-medium">Stock-Out Mortalities</span>
+</div>
+<div class="flex flex-col items-center md:border-x md:border-white/10">
+<span class="font-display font-bold text-5xl md:text-6xl text-[#FED7AA] mb-2 tracking-tight">₹48.2 Cr</span>
+<span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-1">Fiscal Recovery</span>
+<span class="text-sm text-neutral-300 font-medium">Expired Drug Write-offs Rescued</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-display font-bold text-5xl md:text-6xl text-[#FED7AA] mb-2 tracking-tight">100%</span>
+<span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-1">Auditable Telemetry</span>
+<span class="text-sm text-neutral-300 font-medium">Verifiable Frontline Visibility</span>
+</div>
+</div>
+<!-- Luxury Button CTA -->
+<a class="group inline-flex items-center justify-center pl-7 pr-3 py-3 rounded-full bg-amber-accent text-text-obsidian font-semibold text-sm tracking-tight hover:bg-amber-400 transition-all duration-200 shadow-lg" href="#request-access">
+<span>Book an Institutional Briefing</span>
+<span class="w-7 h-7 rounded-full bg-text-obsidian text-white flex items-center justify-center text-xs ml-3 group-hover:translate-x-0.5 transition-transform">
+              &gt;
+            </span>
+</a>
+<p class="text-xs text-neutral-400 mt-4 tracking-wide font-normal">
+            Free pilot sandbox configured in 7 business days for state NHM and procurement secretariats.
+          </p>
+</div>
+</div>
+</section>
+<!-- SECTION: FREQUENTLY ASKED QUESTIONS (AIRY EXPANDABLE ACCORDION) -->
+<section class="w-full px-5 md:px-8 py-20 md:py-28 bg-[#F6F1E8]/70">
+<div class="max-w-3xl mx-auto flex flex-col items-center">
+<div class="text-center mb-14">
+<span class="text-[11px] font-bold tracking-[0.2em] text-primary-rich uppercase mb-3 block">Governance &amp; Operational FAQs</span>
+<h2 class="font-display font-bold text-3xl sm:text-4xl text-text-obsidian tracking-tight">
+            Everything state missions ask us.
+          </h2>
+<p class="text-text-muted text-sm sm:text-base max-w-xl mx-auto mt-2">
+            Clear, transparent protocols designed for statutory audit compliance.
+          </p>
+</div>
+<div class="w-full flex flex-col gap-3.5">
+<!-- FAQ 1 -->
+<details class="group bg-white p-6 rounded-2xl border border-border-soft transition-all duration-200 shadow-xs">
+<summary class="flex justify-between items-center cursor-pointer list-none select-none">
+<span class="font-display font-bold text-base sm:text-lg text-text-obsidian pr-4">Does this replace existing e-Aushadhi or state inventory software?</span>
+<span class="w-8 h-8 rounded-full bg-amber-soft flex items-center justify-center group-open:rotate-180 transition-transform duration-200 text-primary-rich shrink-0">
+<span class="material-symbols-outlined text-[19px]">expand_more</span>
+</span>
+</summary>
+<p class="font-body text-sm sm:text-[15px] text-text-muted mt-4 leading-relaxed pt-3 border-t border-border-soft/60">
+              No. Aushadh Setu acts as an intelligent overlay orchestration engine. It interfaces directly with CDAC's e-Aushadhi, state-specific portals (like Rajasthan's RMSCL or Maharashtra's e-Upkaran), and IDSP surveillance via read/write APIs, enhancing existing systems without requiring double data entry.
+            </p>
+</details>
+<!-- FAQ 2 -->
+<details class="group bg-white p-6 rounded-2xl border border-border-soft transition-all duration-200 shadow-xs">
+<summary class="flex justify-between items-center cursor-pointer list-none select-none">
+<span class="font-display font-bold text-base sm:text-lg text-text-obsidian pr-4">How are medicines verified for cold-chain transit?</span>
+<span class="w-8 h-8 rounded-full bg-amber-soft flex items-center justify-center group-open:rotate-180 transition-transform duration-200 text-primary-rich shrink-0">
+<span class="material-symbols-outlined text-[19px]">expand_more</span>
+</span>
+</summary>
+<p class="font-body text-sm sm:text-[15px] text-text-muted mt-4 leading-relaxed pt-3 border-t border-border-soft/60">
+              Every temperature-sensitive consignment (vaccines, anti-rabies sera, insulin, and antivenom) is paired with IoT BLE data-loggers. If a consignment breaches safe thermal bands during transit, the receiving PHC is automatically flagged to initiate quarantine verification before absorption.
+            </p>
+</details>
+<!-- FAQ 3 -->
+<details class="group bg-white p-6 rounded-2xl border border-border-soft transition-all duration-200 shadow-xs">
+<summary class="flex justify-between items-center cursor-pointer list-none select-none">
+<span class="font-display font-bold text-base sm:text-lg text-text-obsidian pr-4">What is the typical deployment timeline for a pilot district?</span>
+<span class="w-8 h-8 rounded-full bg-amber-soft flex items-center justify-center group-open:rotate-180 transition-transform duration-200 text-primary-rich shrink-0">
+<span class="material-symbols-outlined text-[19px]">expand_more</span>
+</span>
+</summary>
+<p class="font-body text-sm sm:text-[15px] text-text-muted mt-4 leading-relaxed pt-3 border-t border-border-soft/60">
+              District onboarding takes 14 to 21 calendar days. Week 1 maps facility geospatial buffers and historical consumption ledgers; Week 2 conducts hands-on DHO and pharmacist orientation; by Week 3, live automated reallocation recommendations go into effect.
+            </p>
+</details>
+<!-- FAQ 4 -->
+<details class="group bg-white p-6 rounded-2xl border border-border-soft transition-all duration-200 shadow-xs">
+<summary class="flex justify-between items-center cursor-pointer list-none select-none">
+<span class="font-display font-bold text-base sm:text-lg text-text-obsidian pr-4">How is statutory drug auditing handled during inter-facility transfers?</span>
+<span class="w-8 h-8 rounded-full bg-amber-soft flex items-center justify-center group-open:rotate-180 transition-transform duration-200 text-primary-rich shrink-0">
+<span class="material-symbols-outlined text-[19px]">expand_more</span>
+</span>
+</summary>
+<p class="font-body text-sm sm:text-[15px] text-text-muted mt-4 leading-relaxed pt-3 border-t border-border-soft/60">
+              All transfers generate a cryptographically tamper-evident Digital Transfer Voucher (DTV) compliant with General Financial Rules (GFR) 2017 and State Audit norms, reconciling ledgers automatically without manual paper register overhead.
+            </p>
+</details>
+</div>
+</div>
+</section>
+<!-- SECTION: FINAL INVITATION CALLOUT -->
+<section class="w-full px-5 md:px-8 py-20 md:py-24 text-center" id="request-access">
+<div class="max-w-2xl mx-auto flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-soft to-[#F5DEC3] flex items-center justify-center text-primary-rich border border-amber-brand/20 mb-6">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<h3 class="font-display font-bold text-3xl sm:text-4xl text-text-obsidian tracking-tight mb-4">
+          Ready to build an outbreak-resilient medicine network?
+        </h3>
+<p class="font-body text-text-muted text-base max-w-lg mb-8 leading-relaxed">
+          Join state health missions and district collectors in protecting vulnerable populations from avoidable stock-outs.
+        </p>
+<div class="flex flex-col sm:flex-row items-center gap-3.5">
+<a class="group inline-flex items-center pl-7 pr-2.5 py-2.5 rounded-full bg-text-obsidian text-white text-sm font-medium hover:bg-neutral-800 transition-all shadow-md" href="#">
+<span class="mr-3">Request Pilot Access</span>
+<span class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#B2762A] to-[#F1B96B] flex items-center justify-center text-neutral-900 font-bold text-xs">
+              &gt;
+            </span>
+</a>
+<a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-text-obsidian font-medium text-sm border border-border-soft hover:bg-neutral-50 transition-all" href="#how-it-works">
+            Download Architecture Whitepaper
+          </a>
+</div>
+</div>
+</section>
+</main>
+<!-- REFINED LUXURY INSTITUTIONAL FOOTER -->
+<footer class="w-full bg-[#F3EDE2] border-t border-border-soft/80 pt-16 pb-12 mt-12 relative z-10">
+<div class="max-w-6xl mx-auto px-5 md:px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-12 border-b border-border-soft">
+<!-- Left Brand Column -->
+<div class="md:col-span-5 flex flex-col items-start">
+<div class="flex items-center gap-2.5 mb-4">
+<div class="w-7 h-7 rounded-full bg-amber-soft flex items-center justify-center text-primary-rich border border-amber-brand/25">
+<span class="material-symbols-outlined text-[16px]">emergency</span>
+</div>
+<span class="font-display font-bold text-lg text-text-obsidian tracking-tight">Aushadh Setu</span>
+<span class="text-xs text-text-subtle font-medium">औषध सेतु</span>
+</div>
+<p class="font-body text-sm text-text-muted leading-relaxed max-w-sm mb-6">
+            The federated digital backbone orchestrating real-time life-saving medicine availability, buffer stocks, and cold-chain integrity across India's sovereign healthcare ecosystem.
+          </p>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 border border-border-soft text-xs text-text-muted font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+            Operational Integration: ABDM • MoHFW Compliant • C-DAC Grid
+          </div>
+</div>
+<!-- Links: Architecture -->
+<div class="md:col-span-2 md:col-start-7 flex flex-col gap-3">
+<span class="text-xs font-bold uppercase tracking-wider text-text-subtle">Architecture</span>
+<nav class="flex flex-col gap-2.5 text-sm text-text-muted font-medium">
+<a class="hover:text-text-obsidian transition-colors" href="#how-it-works">Surveillance Engine</a>
+<a class="hover:text-text-obsidian transition-colors" href="#">Cold-Chain IoT</a>
+<a class="hover:text-text-obsidian transition-colors" href="#">FHIR Open APIs</a>
+<a class="hover:text-text-obsidian transition-colors" href="#">Verifiable Audit Logs</a>
+</nav>
+</div>
+<!-- Links: Ecosystem -->
+<div class="md:col-span-2 flex flex-col gap-3">
+<span class="text-xs font-bold uppercase tracking-wider text-text-subtle">Ecosystem</span>
+<nav class="flex flex-col gap-2.5 text-sm text-text-muted font-medium">
+<a class="hover:text-text-obsidian transition-colors" href="#pilots">State Missions</a>
+<a class="hover:text-text-obsidian transition-colors" href="#">District Collectorates</a>
+<a class="hover:text-text-obsidian transition-colors" href="#">Pharma Logistics</a>
+<a class="hover:text-text-obsidian transition-colors" href="#impact">National Stock Ledger</a>
+</nav>
+</div>
+<!-- Links: Governance -->
+<div class="md:col-span-2 flex flex-col gap-3">
+<span class="text-xs font-bold uppercase tracking-wider text-text-subtle">Governance</span>
+<nav class="flex flex-col gap-2.5 text-sm text-text-muted font-medium">
+<a class="hover:text-text-obsidian transition-colors" href="#">Privacy Charter</a>
+<a class="hover:text-text-obsidian transition-colors" href="#">MoHFW Guidelines</a>
+<a class="hover:text-text-obsidian transition-colors" href="#">Statutory Audit (GFR)</a>
+<a class="hover:text-text-obsidian transition-colors" href="#">Incident Escalation</a>
+</nav>
+</div>
+</div>
+<!-- Bottom Subfooter -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-subtle">
+<p>© 2025 Aushadh Setu (औषध सेतु). National Medicine Supply Grid initiative under Digital Health Mission. All rights reserved.</p>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span class="font-medium text-text-muted">All 36 States &amp; UT Nodes Synchronized</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
