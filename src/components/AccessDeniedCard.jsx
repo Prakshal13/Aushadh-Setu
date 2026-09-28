@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth, USER_ROLES } from '../context/AuthContext';
 
 export default function AccessDeniedCard({ requiredRole = USER_ROLES.DHO, onSwitchTab }) {
-  const { currentUser, loginAs, setAuthModalOpen } = useAuth();
+  const { currentUser, openAuthForRole } = useAuth();
 
   const isDhoRequired = requiredRole === USER_ROLES.DHO;
   const targetTitle = isDhoRequired ? 'District Health Officer (DHO)' : 'Staff Pharmacist';
@@ -23,38 +23,44 @@ export default function AccessDeniedCard({ requiredRole = USER_ROLES.DHO, onSwit
           {targetTitle} Terminal Restricted
         </h2>
         <p className="text-xs text-text-muted max-w-lg mx-auto leading-relaxed">
-          You are currently viewing AushadhSetu as <strong className="text-text-obsidian font-semibold">{currentUser.name} ({currentUser.designation})</strong>. Under Ministry of Health and Family Welfare (MoHFW) guidelines and the Digital Information Security in Healthcare Act (DISHA), this terminal requires verified <strong className="text-primary-rich">{targetTitle}</strong> credentials.
+          You are currently viewing AushadhSetu as <strong className="text-text-obsidian font-semibold">{currentUser.name} ({currentUser.designation})</strong>. Under Ministry of Health and Family Welfare (MoHFW) guidelines and the Digital Information Security in Healthcare Act (DISHA), this terminal strictly requires verified <strong className="text-primary-rich">{targetTitle}</strong> credentials.
         </p>
       </div>
 
-      <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#EBE4D8] text-xs text-text-muted space-y-1.5 max-w-md mx-auto">
-        <div className="font-bold text-text-obsidian flex items-center justify-center gap-1.5">
-          <span className="material-symbols-outlined text-[16px] text-amber-brand">verified_user</span>
-          <span>Evaluation & Audit Demonstration Mode</span>
+      {/* Security Protocol Notice */}
+      <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#EBE4D8] text-xs text-text-muted space-y-1.5 max-w-md mx-auto text-left">
+        <div className="font-bold text-text-obsidian flex items-center gap-1.5">
+          <span className="material-symbols-outlined text-[16px] text-emerald-700">verified_user</span>
+          <span>DISHA / GFR 2017 Audit Compliance</span>
         </div>
-        <p className="text-[11px]">
-          Click below to instantly switch your simulated government identity or open the National Health Mission clearance switcher.
+        <p className="text-[11px] leading-relaxed text-text-muted">
+          Peer-to-peer drug dispatch authorizations, epidemic surge overrides, and statutory Form 18-B manifests carry legal audit liability. Only authenticated officers may access this terminal.
         </p>
       </div>
 
+      {/* Authentication Gateway Buttons (No Blind Bypass!) */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
         <button
-          onClick={() => loginAs(roleCode)}
+          type="button"
+          onClick={() => openAuthForRole(roleCode)}
           className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#181511] hover:bg-neutral-800 text-white font-bold text-xs transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
         >
-          <span className="material-symbols-outlined text-[16px] text-amber-brand">badge</span>
-          <span>Switch to {targetTitle} Identity</span>
+          <span className="material-symbols-outlined text-[16px] text-amber-brand">login</span>
+          <span>Sign In with {targetTitle} Credentials</span>
         </button>
 
         <button
-          onClick={() => setAuthModalOpen(true)}
-          className="w-full sm:w-auto px-5 py-3 rounded-full bg-[#FAF8F5] hover:bg-stone-100 text-text-obsidian font-bold text-xs border border-[#EBE4D8] transition cursor-pointer"
+          type="button"
+          onClick={() => openAuthForRole(roleCode)}
+          className="w-full sm:w-auto px-5 py-3 rounded-full bg-[#FAF8F5] hover:bg-stone-100 text-text-obsidian font-bold text-xs border border-[#EBE4D8] transition cursor-pointer flex items-center justify-center gap-1.5"
         >
-          View All Roles & Credentials
+          <span className="material-symbols-outlined text-[15px] text-primary-rich">key</span>
+          <span>2FA Mobile OTP / Directory</span>
         </button>
 
         {onSwitchTab && (
           <button
+            type="button"
             onClick={() => onSwitchTab('citizen')}
             className="w-full sm:w-auto px-5 py-3 rounded-full text-text-muted hover:text-text-obsidian font-medium text-xs transition cursor-pointer"
           >

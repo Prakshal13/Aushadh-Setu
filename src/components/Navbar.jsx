@@ -92,7 +92,7 @@ export default function Navbar({
             <button
               onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
               className={`flex items-center gap-1 transition-colors text-[13.5px] font-medium cursor-pointer whitespace-nowrap ${
-                activeTab !== 'landing'
+                ['citizen', 'pharmacist', 'dho', 'forecast', 'simulation'].includes(activeTab)
                   ? 'text-primary-rich font-bold'
                   : 'hover:text-text-obsidian'
               }`}
@@ -250,26 +250,54 @@ export default function Navbar({
           </div>
 
           <button
-            onClick={() => navigateToSection('how-it-works')}
-            className="hover:text-text-obsidian transition-colors cursor-pointer whitespace-nowrap flex items-center"
+            onClick={() => {
+              setActiveTab('how-it-works');
+              setServicesDropdownOpen(false);
+              setMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className={`transition-colors cursor-pointer whitespace-nowrap flex items-center ${
+              activeTab === 'how-it-works' ? 'text-primary-rich font-bold' : 'hover:text-text-obsidian'
+            }`}
           >
             How it works
           </button>
           <button
-            onClick={() => navigateToSection('start-where-you-are')}
-            className="hover:text-text-obsidian transition-colors cursor-pointer whitespace-nowrap flex items-center"
+            onClick={() => {
+              setActiveTab('about');
+              setServicesDropdownOpen(false);
+              setMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className={`transition-colors cursor-pointer whitespace-nowrap flex items-center ${
+              activeTab === 'about' ? 'text-primary-rich font-bold' : 'hover:text-text-obsidian'
+            }`}
           >
             About
           </button>
           <button
-            onClick={() => navigateToSection('impact')}
-            className="hover:text-text-obsidian transition-colors cursor-pointer whitespace-nowrap flex items-center"
+            onClick={() => {
+              setActiveTab('blog');
+              setServicesDropdownOpen(false);
+              setMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className={`transition-colors cursor-pointer whitespace-nowrap flex items-center ${
+              activeTab === 'blog' ? 'text-primary-rich font-bold' : 'hover:text-text-obsidian'
+            }`}
           >
             Blog
           </button>
           <button
-            onClick={() => navigateToSection('request-access')}
-            className="hover:text-text-obsidian transition-colors cursor-pointer whitespace-nowrap flex items-center"
+            onClick={() => {
+              setActiveTab('contact');
+              setServicesDropdownOpen(false);
+              setMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className={`transition-colors cursor-pointer whitespace-nowrap flex items-center ${
+              activeTab === 'contact' ? 'text-primary-rich font-bold' : 'hover:text-text-obsidian'
+            }`}
           >
             Contact
           </button>
@@ -446,16 +474,52 @@ export default function Navbar({
             </button>
           </div>
           <div className="pt-2 border-t border-stone-100 flex items-center justify-around text-xs font-medium text-text-muted">
-            <button onClick={() => navigateToSection('how-it-works')} className="hover:text-text-obsidian">
+            <button
+              onClick={() => {
+                setActiveTab('how-it-works');
+                setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`hover:text-text-obsidian ${
+                activeTab === 'how-it-works' ? 'text-primary-rich font-bold' : ''
+              }`}
+            >
               How it works
             </button>
-            <button onClick={() => navigateToSection('start-where-you-are')} className="hover:text-text-obsidian">
+            <button
+              onClick={() => {
+                setActiveTab('about');
+                setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`hover:text-text-obsidian ${
+                activeTab === 'about' ? 'text-primary-rich font-bold' : ''
+              }`}
+            >
               About
             </button>
-            <button onClick={() => navigateToSection('impact')} className="hover:text-text-obsidian">
+            <button
+              onClick={() => {
+                setActiveTab('blog');
+                setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`hover:text-text-obsidian ${
+                activeTab === 'blog' ? 'text-primary-rich font-bold' : ''
+              }`}
+            >
               Blog
             </button>
-            <button onClick={() => navigateToSection('request-access')} className="hover:text-text-obsidian">
+            <button
+              onClick={() => {
+                setActiveTab('contact');
+                setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`hover:text-text-obsidian ${
+                activeTab === 'contact' ? 'text-primary-rich font-bold' : ''
+              }`}
+            >
               Contact
             </button>
           </div>

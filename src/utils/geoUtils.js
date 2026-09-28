@@ -98,5 +98,12 @@ export async function getBrowserLocation() {
     console.warn('IP Geolocation fallback failed:', ipErr);
   }
 
-  throw new Error('Unable to retrieve location via GPS or network IP.');
+  // Layer 3: Resilient Regional Fallback Coordinates (Pune District Health Headquarters)
+  return {
+    lat: 18.5204,
+    lng: 73.8567,
+    city: 'Pune',
+    region: 'Maharashtra',
+    source: 'REGIONAL_HQ',
+  };
 }

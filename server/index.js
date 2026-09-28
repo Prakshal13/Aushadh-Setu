@@ -10,6 +10,7 @@ import visionRoutes from './routes/vision.js';
 import surveillanceRoutes from './routes/surveillance.js';
 import forecastRoutes from './routes/forecast.js';
 import climateRoutes from './routes/climate.js';
+import authRoutes from './routes/auth.js';
 
 dotenv.config();
 
@@ -35,6 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // API Routes
+app.use('/api/auth', authRoutes);
 app.use('/api/inventory', inventoryRoutes);
 app.use('/api/vision', visionRoutes);
 app.use('/api/surveillance', surveillanceRoutes);

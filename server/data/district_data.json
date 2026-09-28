@@ -34761,6 +34761,28 @@
       "days_to_expiry": 54,
       "status": "HEALTHY",
       "unit_cost_inr": 8
+    },
+    {
+      "batch_no": "MET-2024-4410",
+      "medicine_id": "MED-08",
+      "facility_id": "PHC-01",
+      "quantity": 500,
+      "mfd": "2024-03-01",
+      "expiry": "2026-11-15",
+      "days_to_expiry": 50,
+      "status": "IMMINENT_EXPIRY_RISK",
+      "unit_cost_inr": 25
+    },
+    {
+      "batch_no": "RL-2024-8821",
+      "medicine_id": "MED-04",
+      "facility_id": "PHC-01",
+      "quantity": 24,
+      "mfd": "2024-02-15",
+      "expiry": "2026-11-05",
+      "days_to_expiry": 40,
+      "status": "IMMINENT_EXPIRY_RISK",
+      "unit_cost_inr": 25
     }
   ],
   "disease_surveillance_weekly": [

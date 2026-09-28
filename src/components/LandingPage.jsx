@@ -33,7 +33,7 @@ export default function LandingPage({
 <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-400 to-amber-100 flex items-center justify-center text-amber-900 text-[11px] font-bold shadow-xs">
 <span className="material-symbols-outlined text-[14px]">local_hospital</span>
 </div>
-<span className="text-[12px] font-medium text-text-umber tracking-tight">District health operational across 5 sovereign states</span>
+<span className="text-[12px] font-medium text-text-umber tracking-tight">Pilot Deployment Grid across 5 Sovereign States</span>
 </div>
 {/**/}
 <h1 className="font-display font-bold text-4xl sm:text-6xl md:text-[66px] leading-[1.09] tracking-[-0.03em] text-text-obsidian max-w-4xl mb-6">
@@ -121,12 +121,28 @@ export default function LandingPage({
 <div className="max-w-6xl mx-auto flex flex-col items-center">
 {/**/}
 <div className="text-center mb-16 max-w-3xl mx-auto">
-<h2 className="font-display font-bold text-3xl sm:text-4xl text-text-obsidian tracking-tight mb-4">
-            Start where you are—then we'll guide you to the right next step
-          </h2>
-<p className="text-text-muted text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
-            Whether you are confronting chaotic monsoon stock-outs, auditing systemic state-wide drug expiry, or seeking a 1-on-1 institutional briefing.
-          </p>
+  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-soft text-primary-rich font-bold text-xs border border-amber-brand/20 mb-4 shadow-2xs">
+    <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+    <span>About Aushadh Setu • Sovereign Mission</span>
+  </div>
+  <h2 className="font-display font-bold text-3xl sm:text-4xl text-text-obsidian tracking-tight mb-4">
+    Bridging Frontline Medicine Chaos with Autonomous Supply
+  </h2>
+  <p className="text-text-muted text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+    Aushadh Setu is India’s sovereign outbreak-aware medicine supply and redistribution grid—collapsing the 21-day procurement lag into real-time algorithmic rebalancing.
+  </p>
+  <div className="mt-4 flex justify-center">
+    <button
+      onClick={() => {
+        setActiveTab && setActiveTab('about');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }}
+      className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white hover:bg-amber-50 text-primary-rich text-xs font-bold border border-amber-brand/30 transition shadow-2xs cursor-pointer"
+    >
+      <span>Read Our Sovereign Mission &amp; National Architecture</span>
+      <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
+    </button>
+  </div>
 </div>
 {/**/}
 <div className="grid grid-cols-1 md:grid-cols-3 gap-7 w-full items-stretch">
@@ -320,6 +336,18 @@ export default function LandingPage({
 <p className="text-text-muted text-sm sm:text-base max-w-xl mx-auto mt-3 font-normal leading-relaxed">
           How Aushadh Setu closes the operational gap within hours rather than waiting for bureaucratic re-ordering cycles.
         </p>
+        <div className="mt-4 flex justify-center">
+          <button
+            onClick={() => {
+              setActiveTab && setActiveTab('how-it-works');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-soft hover:bg-amber-100 text-primary-rich text-xs font-bold border border-amber-brand/30 transition shadow-2xs cursor-pointer"
+          >
+            <span>Explore Complete Operational Framework &amp; Deployment Tiers</span>
+            <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
+          </button>
+        </div>
 </div>
 {/**/}
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 w-full items-center">
@@ -748,14 +776,14 @@ export default function LandingPage({
 <div className="absolute bottom-0 left-10 w-[300px] h-[250px] bg-[#C27814]/15 rounded-full blur-[90px] pointer-events-none"></div>
 <div className="relative z-10 flex flex-col items-center text-center">
 <span className="text-[11px] font-bold tracking-[0.22em] text-amber-accent uppercase mb-3 block">
-        The Triple Zero Public Health Benchmark
-      </span>
+  Field Dispatches &amp; Research • The Aushadh Setu Blog
+</span>
 <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white max-w-2xl tracking-tight mb-4 leading-tight">
-        Engineered for audited resilience across district healthcare boundaries.
-      </h2>
+  The Triple Zero Benchmark: Operational Case Studies &amp; Field Reports
+</h2>
 <p className="font-body text-neutral-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-10 font-normal">
-        No obligation. In 30 minutes, we'll map your district cold-chain gaps, surplus expiry risk, and the fastest automated path to fix them.
-      </p>
+  Published clinical analyses, GFR 2017 audit case studies, and cold-chain telemetry dispatches across active epidemic corridors.
+</p>
 {/**/}
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-3xl mb-10 py-6 px-6 bg-white/[0.04] rounded-2xl border border-white/10 backdrop-blur-md">
 <div className="flex flex-col items-center">
@@ -793,15 +821,32 @@ export default function LandingPage({
 </ul>
 </div>
 {/**/}
-<a className="group inline-flex items-center pl-7 pr-2.5 py-2.5 rounded-full bg-white text-text-obsidian hover:bg-neutral-100 transition-all duration-200 shadow-xl cursor-pointer" href="#request-access" onClick={(e) => { e.preventDefault(); setActiveTab && setActiveTab('dho'); }}>
-<span className="font-medium text-sm sm:text-[15px] tracking-tight mr-4 text-text-obsidian">Schedule State Demonstration</span>
-<span className="w-8 h-8 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-xs shadow-sm group-hover:scale-105 transition-transform duration-200">
-          &gt;
-        </span>
-</a>
+<div className="flex flex-col sm:flex-row items-center gap-3">
+  <button
+    className="group inline-flex items-center pl-7 pr-2.5 py-2.5 rounded-full bg-white text-text-obsidian hover:bg-neutral-100 transition-all duration-200 shadow-xl cursor-pointer"
+    onClick={() => {
+      setActiveTab && setActiveTab('blog');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }}
+  >
+    <span className="font-medium text-sm sm:text-[15px] tracking-tight mr-4 text-text-obsidian">Read All 4 Operational Dispatches</span>
+    <span className="w-8 h-8 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-xs shadow-sm group-hover:scale-105 transition-transform duration-200">
+      &gt;
+    </span>
+  </button>
+  <button
+    className="inline-flex items-center px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold border border-white/20 transition cursor-pointer"
+    onClick={() => {
+      setActiveTab && setActiveTab('dho');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }}
+  >
+    Launch Command Console
+  </button>
+</div>
 <p className="text-xs text-neutral-400 mt-3 font-normal tracking-wide">
-        It's free. Most health missions leave with immediate deployment blueprints.
-      </p>
+  Published peer-reviewed case studies from active Maharashtra and Uttarakhand pilot corridors.
+</p>
 </div>
 </div>
 {/**/}
@@ -998,25 +1043,39 @@ export default function LandingPage({
 </div>
 {/**/}
 <div className="relative z-10 max-w-3xl flex flex-col items-center">
-<h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-[44px] leading-[1.12] tracking-tight text-text-obsidian max-w-2xl mb-4">
-        Let’s build the epidemic medicine network your district deserves.
-      </h2>
-<p className="font-body text-base sm:text-[18px] text-[#666057] max-w-xl mx-auto leading-relaxed mb-9 font-normal">
-        No obligation. We’ll map your top 3 frontline supply gaps in 30 minutes.
-      </p>
+  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-soft text-primary-rich font-bold text-xs border border-amber-brand/20 mb-4 shadow-2xs">
+    <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+    <span>Institutional Liaison &amp; 24/7 Nodal Hotline • Contact Us</span>
+  </div>
+  <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-[44px] leading-[1.12] tracking-tight text-text-obsidian max-w-2xl mb-4">
+    Connect with the National Health Logistics Command
+  </h2>
+  <p className="font-body text-base sm:text-[17px] text-[#666057] max-w-xl mx-auto leading-relaxed mb-6 font-normal">
+    Direct liaison for State Health Mission Directors, District Collectors, and Chief Medical Officers. Emergency medicine deficit hotline: <strong className="text-text-obsidian font-mono">1800-AUSHADH (24x7)</strong>.
+  </p>
 {/**/}
 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-{/**/}
-<a className="group inline-flex items-center pl-7 pr-2.5 py-2.5 rounded-full bg-[#181513] text-white hover:bg-neutral-800 transition-all duration-200 shadow-[0_6px_20px_rgba(24,21,19,0.14)] hover:shadow-lg w-full sm:w-auto justify-center sm:justify-start cursor-pointer" href="#request-access" onClick={(e) => { e.preventDefault(); setActiveTab && setActiveTab('dho'); }}>
-<span className="font-medium text-[14px] sm:text-[15px] tracking-tight mr-4 text-white">Deploy Free District Pilot</span>
-<span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#B2762A] via-[#E8B264] to-[#FDE7B8] flex items-center justify-center text-neutral-900 font-bold text-xs shadow-inner group-hover:scale-105 transition-transform duration-200">
-            &gt;
-          </span>
-</a>
-{/**/}
-<a className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white/80 hover:bg-white text-text-obsidian font-medium text-[14px] sm:text-[15px] border border-[#D9D2C5] hover:border-text-subtle transition-all duration-200 shadow-xs w-full sm:w-auto cursor-pointer" href="#how-it-works" onClick={(e) => { e.preventDefault(); setActiveTab && setActiveTab('forecast'); }}>
-          Explore Capabilities
-        </a>
+  <button
+    className="group inline-flex items-center pl-7 pr-2.5 py-2.5 rounded-full bg-[#181513] text-white hover:bg-neutral-800 transition-all duration-200 shadow-[0_6px_20px_rgba(24,21,19,0.14)] hover:shadow-lg w-full sm:w-auto justify-center sm:justify-start cursor-pointer"
+    onClick={() => {
+      setActiveTab && setActiveTab('contact');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }}
+  >
+    <span className="font-medium text-[14px] sm:text-[15px] tracking-tight mr-4 text-white">Contact &amp; 24/7 Nodal Hotline</span>
+    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#B2762A] via-[#E8B264] to-[#FDE7B8] flex items-center justify-center text-neutral-900 font-bold text-xs shadow-inner group-hover:scale-105 transition-transform duration-200">
+      &gt;
+    </span>
+  </button>
+  <button
+    className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white/80 hover:bg-white text-text-obsidian font-medium text-[14px] sm:text-[15px] border border-[#D9D2C5] hover:border-text-subtle transition-all duration-200 shadow-xs w-full sm:w-auto cursor-pointer"
+    onClick={() => {
+      setActiveTab && setActiveTab('dho');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }}
+  >
+    Launch Command Console
+  </button>
 </div>
 </div>
 </div>
@@ -1040,37 +1099,37 @@ export default function LandingPage({
           </p>
 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 border border-border-soft text-xs text-text-muted font-medium">
 <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
-            Operational Integration: ABDM • MoHFW Compliant • C-DAC Grid
+            Architecture Aligned: ABDM Standards • MoHFW Guidelines • C-DAC e-Aushadhi Compatible
           </div>
 </div>
 {/**/}
 <div className="md:col-span-2 md:col-start-7 flex flex-col gap-3">
 <span className="text-xs font-bold uppercase tracking-wider text-text-subtle">Architecture</span>
-<nav className="flex flex-col gap-2.5 text-sm text-text-muted font-medium">
-<a className="hover:text-text-obsidian transition-colors" href="#how-it-works">Surveillance Engine</a>
-<a className="hover:text-text-obsidian transition-colors" href="#">Cold-Chain IoT</a>
-<a className="hover:text-text-obsidian transition-colors" href="#">FHIR Open APIs</a>
-<a className="hover:text-text-obsidian transition-colors" href="#">Verifiable Audit Logs</a>
+<nav className="flex flex-col gap-2 text-sm text-text-muted font-medium text-left">
+<button type="button" onClick={() => { setActiveTab && setActiveTab('forecast'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">Surveillance Engine</button>
+<button type="button" onClick={() => { setActiveTab && setActiveTab('simulation'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">Cold-Chain IoT</button>
+<button type="button" onClick={() => { setActiveTab && setActiveTab('how-it-works'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">4-Tier Framework</button>
+<button type="button" onClick={() => { setActiveTab && setActiveTab('pharmacist'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">Verifiable Audit Logs</button>
 </nav>
 </div>
 {/**/}
 <div className="md:col-span-2 flex flex-col gap-3">
 <span className="text-xs font-bold uppercase tracking-wider text-text-subtle">Ecosystem</span>
-<nav className="flex flex-col gap-2.5 text-sm text-text-muted font-medium">
-<a className="hover:text-text-obsidian transition-colors" href="#pilots">State Missions</a>
-<a className="hover:text-text-obsidian transition-colors" href="#">District Collectorates</a>
-<a className="hover:text-text-obsidian transition-colors" href="#">Pharma Logistics</a>
-<a className="hover:text-text-obsidian transition-colors" href="#impact">National Stock Ledger</a>
+<nav className="flex flex-col gap-2 text-sm text-text-muted font-medium text-left">
+<button type="button" onClick={() => { setActiveTab && setActiveTab('dho'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">State Missions</button>
+<button type="button" onClick={() => { setActiveTab && setActiveTab('dho'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">District Command</button>
+<button type="button" onClick={() => { setActiveTab && setActiveTab('pharmacist'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">Pharma Desk</button>
+<button type="button" onClick={() => { setActiveTab && setActiveTab('citizen'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">Citizen Stock Finder</button>
 </nav>
 </div>
 {/**/}
 <div className="md:col-span-2 flex flex-col gap-3">
 <span className="text-xs font-bold uppercase tracking-wider text-text-subtle">Governance</span>
-<nav className="flex flex-col gap-2.5 text-sm text-text-muted font-medium">
-<a className="hover:text-text-obsidian transition-colors" href="#">Privacy Charter</a>
-<a className="hover:text-text-obsidian transition-colors" href="#">MoHFW Guidelines</a>
-<a className="hover:text-text-obsidian transition-colors" href="#">Statutory Audit (GFR)</a>
-<a className="hover:text-text-obsidian transition-colors" href="#">Incident Escalation</a>
+<nav className="flex flex-col gap-2 text-sm text-text-muted font-medium text-left">
+<button type="button" onClick={() => { setActiveTab && setActiveTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">About Mission</button>
+<button type="button" onClick={() => { setActiveTab && setActiveTab('how-it-works'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">MoHFW Guidelines</button>
+<button type="button" onClick={() => { setActiveTab && setActiveTab('blog'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">Statutory Audit (GFR)</button>
+<button type="button" onClick={() => { setActiveTab && setActiveTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-text-obsidian transition-colors cursor-pointer">24/7 SOS Escalation</button>
 </nav>
 </div>
 </div>
@@ -1079,7 +1138,7 @@ export default function LandingPage({
 <p className="">© 2025 Aushadh Setu (औषध सेतु). National Medicine Supply Grid initiative under Digital Health Mission. All rights reserved.</p>
 <div className="flex items-center gap-2">
 <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-<span className="font-medium text-text-muted">All 36 States &amp; UT Nodes Synchronized</span>
+<span className="font-medium text-text-muted">National Grid Architecture • 5 Flagship Pilot Corridors Active</span>
 </div>
 </div>
 </div>

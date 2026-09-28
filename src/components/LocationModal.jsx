@@ -105,7 +105,7 @@ export default function LocationModal({
   );
 
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-sm animate-fade-in">
       <div
         className="relative w-full max-w-lg bg-[#FAF8F5] rounded-3xl border border-[#EBE4D8] shadow-2xl overflow-hidden p-6 sm:p-7 space-y-5"
         onClick={(e) => e.stopPropagation()}

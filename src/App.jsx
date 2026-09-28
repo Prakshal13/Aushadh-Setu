@@ -7,6 +7,10 @@ import DhoDashboard from './components/DhoDashboard';
 import SimulationLab from './components/SimulationLab';
 import PredictiveIntelligenceStudio from './components/PredictiveIntelligenceStudio';
 import ErrorBoundary from './components/ErrorBoundary';
+import HowItWorks from './components/HowItWorks';
+import AboutPage from './components/AboutPage';
+import BlogPage from './components/BlogPage';
+import ContactPage from './components/ContactPage';
 import AuthModal from './components/AuthModal';
 import AccessDeniedCard from './components/AccessDeniedCard';
 import LocationModal from './components/LocationModal';
@@ -23,7 +27,9 @@ export default function App() {
 
 function AppContent() {
   const { currentUser, isDho, isCitizen } = useAuth();
-  const [activeTab, setActiveTab] = useState('landing');
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialTab = urlParams.get('tab') || 'landing';
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [selectedState, setSelectedState] = useState('ST-MH');
   const [selectedDistrict, setSelectedDistrict] = useState('DIST-MH-PUNE');
   const [selectedFacility, setSelectedFacility] = useState('PHC-01');
@@ -278,6 +284,18 @@ function AppContent() {
                   <AccessDeniedCard requiredRole={USER_ROLES.DHO} onSwitchTab={setActiveTab} />
                 )
               )}
+              {activeTab === 'how-it-works' && (
+                <HowItWorks setActiveTab={setActiveTab} />
+              )}
+              {activeTab === 'about' && (
+                <AboutPage setActiveTab={setActiveTab} />
+              )}
+              {activeTab === 'blog' && (
+                <BlogPage setActiveTab={setActiveTab} />
+              )}
+              {activeTab === 'contact' && (
+                <ContactPage setActiveTab={setActiveTab} />
+              )}
             </ErrorBoundary>
           </main>
 
@@ -289,7 +307,7 @@ function AppContent() {
                 <span>National Outbreak-Aware Medicine Supply & Redistribution Grid</span>
               </div>
               <div className="text-text-subtle text-[11px]">
-                Active Pilot States: Maharashtra, Rajasthan, Delhi, Uttarakhand & Tamil Nadu • C-DAC Compliant
+                Active Pilot States: Maharashtra, Rajasthan, Delhi, Uttarakhand & Tamil Nadu • C-DAC e-Aushadhi Compatible Architecture
               </div>
             </div>
           </footer>
