@@ -154,9 +154,9 @@ export default function AuthModal() {
   const isAlreadyLoggedIn = currentUser.role !== USER_ROLES.CITIZEN;
 
   return (
-    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-stone-900/65 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-4 bg-stone-900/65 backdrop-blur-md animate-fade-in overflow-y-auto">
       <div
-        className="relative w-full max-w-lg bg-[#FAF8F5] rounded-3xl border border-[#EBE4D8] shadow-2xl overflow-hidden p-6 sm:p-8 space-y-5"
+        className="relative w-full max-w-lg bg-[#FAF8F5] rounded-3xl border border-[#EBE4D8] shadow-2xl max-h-[92vh] overflow-y-auto p-5 sm:p-7 space-y-4 my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -316,9 +316,23 @@ export default function AuthModal() {
                 <>
                   {/* Password Field */}
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-text-obsidian block">
-                      Government Security Password:
-                    </label>
+                    <div className="flex items-center justify-between">
+                      <label className="text-xs font-bold text-text-obsidian block">
+                        Government Security Password:
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const demoPass = selectedRoleTab === 'DHO' ? 'NIC@Gov#2026' : 'NHM@Pharma#2026';
+                          setPassword(demoPass);
+                          setCaptchaInput(expectedCaptcha);
+                        }}
+                        className="text-[10.5px] font-bold text-amber-brand hover:text-amber-800 transition cursor-pointer flex items-center gap-1 bg-amber-soft/60 px-2 py-0.5 rounded-md border border-amber-brand/20 hover:bg-amber-soft"
+                        title="Click to auto-fill official evaluation password"
+                      >
+                        <span>⚡ Auto-fill: <code className="font-mono">{selectedRoleTab === 'DHO' ? 'NIC@Gov#2026' : 'NHM@Pharma#2026'}</code></span>
+                      </button>
+                    </div>
                     <div className="relative">
                       <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[17px]">
                         lock
