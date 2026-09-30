@@ -1088,8 +1088,8 @@ export default function LandingPage({
 {/**/}
 <div className="md:col-span-5 flex flex-col items-start">
 <div className="flex items-center gap-2.5 mb-4">
-<div className="w-7 h-7 rounded-full bg-amber-soft flex items-center justify-center text-primary-rich border border-amber-brand/25">
-<span className="material-symbols-outlined text-[16px]">emergency</span>
+<div className="w-9 h-9 rounded-full overflow-hidden border border-amber-brand/30 shadow-2xs shrink-0 bg-[#FAF8F5] flex items-center justify-center">
+  <img src="/logo-emblem.png" alt="Aushadh Setu" className="w-full h-full object-cover scale-115" />
 </div>
 <span className="font-display font-bold text-lg text-text-obsidian tracking-tight">Aushadh Setu</span>
 <span className="text-xs text-text-subtle font-medium">औषध सेतु</span>

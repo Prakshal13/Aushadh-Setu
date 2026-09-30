@@ -6,35 +6,51 @@ export default function AboutPage({ setActiveTab }) {
       {/* 1. Hero Section */}
       <section className="bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#FAF8F5] rounded-3xl p-6 sm:p-10 shadow-[0_4px_24px_rgba(26,22,20,0.04)] border border-[#EBE4D8] space-y-6 relative overflow-hidden">
 
-        <div className="max-w-3xl space-y-3 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-soft text-primary-rich font-bold text-xs border border-amber-brand/20">
-            <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-            <span>National Public Health Supply Mesh • DISHA / MoHFW Aligned</span>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+          <div className="max-w-2xl space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-soft text-primary-rich font-bold text-xs border border-amber-brand/20">
+              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+              <span>National Public Health Supply Mesh • DISHA / MoHFW Aligned</span>
+            </div>
+
+            <h1 className="font-display font-bold text-2xl sm:text-4xl text-text-obsidian tracking-tight leading-tight">
+              About Aushadh Setu (औषध सेतु)
+            </h1>
+
+            <p className="text-sm sm:text-base text-text-muted leading-relaxed">
+              Aushadh Setu is India’s sovereign outbreak-aware medicine supply and autonomous redistribution grid. We collapse the 21-day bureaucratic drug procurement cycle into real-time, algorithmic peer-to-peer rebalancing so no patient dies of preventable medicine stockouts.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <button
+                onClick={() => setActiveTab && setActiveTab('how-it-works')}
+                className="px-5 py-2.5 rounded-full bg-[#181511] hover:bg-neutral-800 text-white text-xs font-bold transition shadow-xs flex items-center gap-2 cursor-pointer"
+              >
+                <span>Explore 4-Step Deployment Framework</span>
+                <span className="material-symbols-outlined text-[16px] text-amber-accent">arrow_forward</span>
+              </button>
+              <button
+                onClick={() => setActiveTab && setActiveTab('contact')}
+                className="px-5 py-2.5 rounded-full bg-white hover:bg-stone-50 text-text-obsidian text-xs font-bold border border-[#EBE4D8] shadow-2xs transition flex items-center gap-2 cursor-pointer"
+              >
+                <span>Request 48-Hour District Pilot</span>
+                <span className="material-symbols-outlined text-[16px] text-primary-rich">mail</span>
+              </button>
+            </div>
           </div>
 
-          <h1 className="font-display font-bold text-2xl sm:text-4xl text-text-obsidian tracking-tight leading-tight">
-            About Aushadh Setu (औषध सेतु)
-          </h1>
-
-          <p className="text-sm sm:text-base text-text-muted leading-relaxed">
-            Aushadh Setu is India’s sovereign outbreak-aware medicine supply and autonomous redistribution grid. We collapse the 21-day bureaucratic drug procurement cycle into real-time, algorithmic peer-to-peer rebalancing so no patient dies of preventable medicine stockouts.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-3 pt-2">
-            <button
-              onClick={() => setActiveTab && setActiveTab('how-it-works')}
-              className="px-5 py-2.5 rounded-full bg-[#181511] hover:bg-neutral-800 text-white text-xs font-bold transition shadow-xs flex items-center gap-2 cursor-pointer"
-            >
-              <span>Explore 4-Step Deployment Framework</span>
-              <span className="material-symbols-outlined text-[16px] text-amber-accent">arrow_forward</span>
-            </button>
-            <button
-              onClick={() => setActiveTab && setActiveTab('contact')}
-              className="px-5 py-2.5 rounded-full bg-white hover:bg-stone-50 text-text-obsidian text-xs font-bold border border-[#EBE4D8] shadow-2xs transition flex items-center gap-2 cursor-pointer"
-            >
-              <span>Request 48-Hour District Pilot</span>
-              <span className="material-symbols-outlined text-[16px] text-primary-rich">mail</span>
-            </button>
+          {/* Official Seal Showcase */}
+          <div className="hidden md:flex flex-col items-center justify-center p-5 rounded-2xl bg-white/80 border border-[#EBE4D8] shadow-xs shrink-0 self-center">
+            <div className="w-28 h-28 rounded-full overflow-hidden border border-amber-brand/20 shadow-2xs bg-[#FAF8F5]">
+              <img
+                src="/logo-emblem.png"
+                alt="Aushadh Setu Official Seal"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <span className="text-[10px] font-bold text-text-subtle uppercase tracking-widest mt-2.5">
+              Official Grid Seal
+            </span>
           </div>
         </div>
 

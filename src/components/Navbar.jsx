@@ -63,8 +63,12 @@ export default function Navbar({
           }}
           className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group shrink-0 select-none"
         >
-          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-soft to-[#F7DFC5] flex items-center justify-center text-primary-rich border border-amber-brand/20 group-hover:scale-105 transition-transform duration-200 shadow-2xs shrink-0">
-            <span className="material-symbols-outlined text-[19px]">emergency</span>
+          <div className="w-10 h-10 rounded-full overflow-hidden border border-amber-brand/30 shadow-2xs group-hover:scale-105 transition-transform duration-200 shrink-0 bg-[#FAF8F5] flex items-center justify-center">
+            <img
+              src="/logo-emblem.png"
+              alt="Aushadh Setu Emblem"
+              className="w-full h-full object-cover scale-115"
+            />
           </div>
           <div className="flex flex-col justify-center">
             <div className="flex items-center gap-1.5">
