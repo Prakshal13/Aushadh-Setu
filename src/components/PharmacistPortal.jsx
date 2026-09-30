@@ -915,79 +915,10 @@ export default function PharmacistPortal({
                 <p className="text-xs text-text-muted">Instant batch metadata extraction via multimodal camera</p>
               </div>
             </div>
-            <div className="flex items-center gap-1.5">
-              <button
-                type="button"
-                onClick={() => setShowKeyModal(!showKeyModal)}
-                className={`text-[10px] font-bold px-2.5 py-1 rounded-full border transition flex items-center gap-1 cursor-pointer ${
-                  geminiApiKey
-                    ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
-                    : 'bg-amber-soft text-primary-rich border-amber-brand/20 hover:bg-amber-100'
-                }`}
-                title="Configure Google Gemini 1.5 Flash Vision API Key"
-              >
-                <span>{geminiApiKey ? '✨ Gemini Live Cloud AI' : '⚡ Gemini 1.5 Flash Vision'}</span>
-                <span className="material-symbols-outlined text-[13px]">tune</span>
-              </button>
-            </div>
+            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-amber-soft text-primary-rich border border-amber-brand/20">
+              ⚡ Gemini 1.5 Flash Vision
+            </span>
           </div>
-
-          {/* Gemini API Key Configuration Drawer */}
-          {showKeyModal && (
-            <div className="p-3.5 bg-[#FAF8F5] rounded-2xl border border-amber-brand/30 space-y-2.5 text-xs animate-fade-in">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-text-obsidian flex items-center gap-1.5">
-                  <span className="text-amber-brand">✨</span>
-                  <span>Connect Live Google Gemini 1.5 Flash Vision</span>
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setShowKeyModal(false)}
-                  className="text-stone-400 hover:text-stone-700 text-xs font-bold px-1.5 py-0.5 rounded-lg hover:bg-stone-200 transition cursor-pointer"
-                >
-                  ✕
-                </button>
-              </div>
-              <p className="text-[11px] text-text-muted leading-relaxed">
-                Connect your Google Gemini API key to enable live multimodal scanning for <strong>any medicine carton, bottle, or blister strip in the world</strong>. If left blank, our high-precision local Tesseract.js OCR engine with 120+ Indian Pharmacopeial Directory runs automatically!
-              </p>
-              <div className="flex items-center gap-2">
-                <input
-                  type="password"
-                  value={geminiApiKey}
-                  onChange={(e) => {
-                    const val = e.target.value.trim();
-                    setGeminiApiKey(val);
-                    if (val) {
-                      localStorage.setItem('aushadh_gemini_api_key', val);
-                    } else {
-                      localStorage.removeItem('aushadh_gemini_api_key');
-                    }
-                  }}
-                  placeholder="Paste Gemini API Key (e.g. AIzaSy...)"
-                  className="flex-1 px-3 py-1.5 rounded-xl bg-white border border-[#EBE4D8] text-xs font-mono text-text-obsidian focus:outline-none focus:border-amber-brand shadow-inner"
-                />
-                {geminiApiKey && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setGeminiApiKey('');
-                      localStorage.removeItem('aushadh_gemini_api_key');
-                    }}
-                    className="px-2.5 py-1.5 rounded-xl bg-stone-100 hover:bg-rose-50 text-rose-700 text-xs font-bold transition cursor-pointer"
-                  >
-                    Clear
-                  </button>
-                )}
-              </div>
-              <div className="text-[10px] text-text-subtle flex flex-wrap items-center justify-between gap-1 pt-0.5 border-t border-stone-200/60">
-                <span>Free API Key available at <a href="https://aistudio.google.com" target="_blank" rel="noreferrer" className="text-primary-rich font-bold underline">aistudio.google.com</a></span>
-                <span className={geminiApiKey ? 'text-emerald-700 font-bold' : 'text-amber-800 font-semibold'}>
-                  {geminiApiKey ? '● Live Cloud Multimodal Vision Active' : '● Offline High-Precision OCR Active'}
-                </span>
-              </div>
-            </div>
-          )}
 
           {/* Quick Sample Selector */}
           <div className="space-y-1.5">
