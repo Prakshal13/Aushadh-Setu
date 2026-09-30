@@ -28,6 +28,9 @@ dist-ssr
 .env.local
 .env.*.local
 
+# OCR data
+*.traineddata
+
 # Uploads
 uploads/*
 !uploads/.gitkeep
