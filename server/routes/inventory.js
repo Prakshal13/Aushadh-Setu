@@ -60,14 +60,21 @@ router.get('/batches', (req, res) => {
     const dailyRate = med ? med.standard_daily_baseline : 30;
     const dsr = (batch.quantity / dailyRate).toFixed(1);
 
+    const displayName = med
+      ? (med.brand_name ? `${med.brand_name} (${med.generic_name})` : med.generic_name)
+      : 'Essential Medicine';
+
     return {
       ...batch,
-      medicine_name: med ? med.generic_name : 'Unknown Medicine',
-      category: med ? med.category : 'General',
+      medicine_name: displayName,
+      brand_name: med ? med.brand_name : '',
+      generic_name: med ? med.generic_name : displayName,
+      category: med ? med.category : 'General Supply',
       facility_name: facility ? facility.name : 'Unknown Facility',
       facility_type: facility ? facility.type : 'PHC',
       days_of_stock_remaining: parseFloat(dsr),
       is_cold_chain: med ? med.is_cold_chain : false,
+      storage_type: med?.is_cold_chain ? '2°C – 8°C Cold Chain' : 'Ambient (15°C – 25°C)',
     };
   });
 

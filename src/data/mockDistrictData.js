@@ -609,11 +609,22 @@ const curatedFacilities = [
       is_cold_chain: true,
       standard_daily_baseline: 5,
       diseases_linked: ["Diabetic Ketoacidosis", "Uncontrolled Diabetes"]
+    },
+    {
+      id: "MED-16",
+      generic_name: "Cefuroxime Axetil Tablets IP 500mg",
+      brand_name: "Ceftum 500 Tablets",
+      category: "Antibiotic",
+      unit: "Strip of 4 Tabs",
+      is_cold_chain: false,
+      standard_daily_baseline: 20,
+      diseases_linked: ["Bacterial Infections", "Bronchitis", "Severe RTI", "Pneumonia"]
     }
   ];
 
   const curatedBatches = [
     // Maharashtra Batches
+    { batch_no: "CFT-2024-9912", medicine_id: "MED-16", facility_id: "PHC-01", quantity: 640, mfd: "2024-05-10", expiry: "2026-11-20", days_to_expiry: 51, status: "HEALTHY", unit_cost_inr: 85 },
     { batch_no: "RL-2024-8821", medicine_id: "MED-04", facility_id: "WH-01", quantity: 1400, mfd: "2024-02-15", expiry: "2026-11-05", days_to_expiry: 40, status: "IMMINENT_EXPIRY_RISK", unit_cost_inr: 48 },
     { batch_no: "RL-2024-9102", medicine_id: "MED-04", facility_id: "PHC-01", quantity: 25, mfd: "2025-01-10", expiry: "2027-01-10", days_to_expiry: 470, status: "CRITICAL_STOCKOUT_RISK", unit_cost_inr: 48 },
     { batch_no: "PCM-2024-7719", medicine_id: "MED-01", facility_id: "PHC-01", quantity: 1800, mfd: "2024-11-10", expiry: "2027-11-10", days_to_expiry: 775, status: "HEALTHY", unit_cost_inr: 6 },
